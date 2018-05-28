@@ -4,7 +4,6 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 REQUIRES = ['pybaseconv==0.*']
-TESTS_REQUIRES = ['pytest', ' pytest-pep8', 'pytest-flakes', 'pytest-cov']
 
 setup(
     name="uuid_shortener",
@@ -16,7 +15,6 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     install_requires=REQUIRES,
-    tests_require=TESTS_REQUIRES,
     packages=find_packages(),
     classifiers=(
         'Programming Language :: Python :: 3.5',
