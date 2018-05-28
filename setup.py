@@ -1,0 +1,32 @@
+from setuptools import setup, find_packages
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+REQUIRES = ['pybaseconv==0.*']
+TESTS_REQUIRES = ['pytest', ' pytest-pep8', 'pytest-flakes', 'pytest-cov']
+
+setup(
+    name="uuid_shortener",
+    version="0.0.1",
+    author="Samira El Aabidi",
+    author_email="sam.elaabidi@gmail.com",
+    keywords=["Python", "UUID", "UUID Shortener", "Hex base", "Short URL"],
+    description="This library allows you to shorten a uuid",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    install_requires=REQUIRES,
+    tests_require=TESTS_REQUIRES,
+    packages=find_packages(),
+    classifiers=(
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Information Technology',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Operating System :: OS Independent',
+        'Topic :: Software Development :: Libraries :: Python Modules'
+    ),
+)
