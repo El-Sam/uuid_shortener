@@ -1,11 +1,18 @@
 # uuid_shortener
 
 [![Build Status](https://travis-ci.com/El-Sam/uuid_shortener.svg?branch=master)](https://travis-ci.com/El-Sam/uuid_shortener)
+[![PyPI supported versions](https://img.shields.io/pypi/pyversions/uuid-shortener-py.svg)](https://pypi.python.org/pypi/uuid-shortener-py)
+[![PyPI version](https://badge.fury.io/py/uuid-shortener-py.svg)](https://badge.fury.io/py/uuid-shortener-py)
 
 **uuid_shortener** is a library for shortening UUIDs into an alphanumerical format suitable for usage in URLs.
 
 The alphanumerical format is Flicker base 58 encoding.
 
+## Installation
+
+from [Pypi](https://pypi.org/project/uuid-shortener-py/):
+
+` pip install uuid-shortener-py `
 
 ## Module usage
 
