@@ -51,4 +51,8 @@ class UuidShortener(object):
         converter = Converter(BASE.FLICKER_BASE_58, BASE.HEX)
         uuid_number = converter.convert(short_uuid)
 
+        if len(uuid_number) < 32:
+            left_pad = '0' * (32 - len(uuid_number))
+            uuid_number = left_pad + uuid_number
+
         return UUID(uuid_number)

@@ -7,12 +7,12 @@ REQUIRES = ['pybaseconv==0.*']
 
 setup(
     name="uuid-shortener-py",
-    version="0.0.1",
+    version="0.0.2",
     author="Samira El Aabidi",
     url='https://github.com/El-Sam/uuid_shortener',
     author_email="sam.elaabidi@gmail.com",
     keywords=["Python", "UUID", "UUID Shortener", "Hex base", "Short URL"],
-    description="This library allows you to shorten a uuid",
+    description="Shorten a uuid into a URL friendly format.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     install_requires=REQUIRES,
