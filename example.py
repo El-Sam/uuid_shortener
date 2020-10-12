@@ -14,7 +14,7 @@ if __name__ == "__main__":
     print('Uuid to shorten: {}'.format(str(uuid_4)))
     print('shortened uuid: {}'.format(short_uuid))
     print('unshortened uuid(original uuid): {}'.
-          format(str(shortener.unshorten(short_uuid)), str(uuid_4)))
+          format(str(shortener.unshorten(short_uuid))))
 
     print("\n\n")
     print('******** With prefix')
@@ -28,4 +28,4 @@ if __name__ == "__main__":
     print('Uuid to shorten: {}'.format(str(uuid_4)))
     print('shortened uuid: {}'.format(short_uuid))
     print('unshortened uuid (original uuid): {}'.
-          format(str(shortener.unshorten(short_uuid)), str(uuid_4)))
+          format(str(shortener.unshorten(short_uuid))))

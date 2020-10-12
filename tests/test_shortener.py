@@ -1,5 +1,5 @@
 from unittest import TestCase
-from uuid_shortener import UuidShortener
+from uuid_shortener import UuidShortener, ShortUuidGenerator
 from uuid import uuid4, UUID
 
 
@@ -32,3 +32,31 @@ class TestUuidShortener(TestCase):
         shortener = UuidShortener()
 
         self.assertEqual(expected_uuid,  shortener.unshorten(shortened_uuid))
+
+
+class TestShortenedUuidGenerator(TestCase):
+
+    def test_one_way_shortener_with_prefix(self):
+        shortener = UuidShortener("dev")
+        short_id = ShortUuidGenerator(prefix="dev", uuid=uuid4)
+
+        short_uuid = short_id()
+
+        self.assertGreater(len(short_uuid), 4)
+        self.assertEqual(0, short_uuid.index("dev-"))
+        self.assertNotEqual(
+            shortener.unshorten(short_uuid),
+            UUID("00000000-0000-0000-0000-000000000000")
+        )
+
+    def test_one_way_shortener_without_prefix(self):
+        shortener = UuidShortener()
+        short_id = ShortUuidGenerator(uuid=uuid4)
+
+        short_uuid = short_id()
+
+        self.assertGreater(len(short_uuid), 0)
+        self.assertNotEqual(
+            shortener.unshorten(short_uuid),
+            UUID("00000000-0000-0000-0000-000000000000")
+        )
