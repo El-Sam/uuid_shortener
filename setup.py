@@ -7,7 +7,7 @@ REQUIRES = ['pybaseconv==0.*']
 
 setup(
     name="uuid-shortener-py",
-    version="0.0.3",
+    version="1.0.0",
     author="Samira El Aabidi",
     url='https://github.com/El-Sam/uuid_shortener',
     author_email="sam.elaabidi@gmail.com",
