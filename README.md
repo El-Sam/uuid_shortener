@@ -33,9 +33,9 @@ if __name__ == "__main__":
     short_uuid = shortener.shorten(uuid_4)
     unshortened_uuid = shortener.unshorten(short_uuid)
 
-    print('Uuid to shorten: {}'.format(str(uuid_4)))
-    print('shortened uuid: {}'.format(short_uuid))
-    print('unshortened uuid(original uuid): {}'.format(str(shortener.unshorten(short_uuid)), str(uuid_4)))
+    print(f'Uuid to shorten: {uuid_4}')
+    print(f'shortened uuid: {short_uuid}')
+    print(f'unshortened uuid(original uuid): {shortener.unshorten(short_uuid)}')
 
 ```
 
@@ -57,16 +57,15 @@ from uuid import uuid4
 if __name__ == "__main__":
     print('******** With prefix')
 
-    shortener = UuidShortener('meow')  # ;)
+    shortener = UuidShortener('meow')
     uuid_4 = uuid4()
 
     short_uuid = shortener.shorten(uuid_4)
     unshortened_uuid = shortener.unshorten(short_uuid)
 
-    print('Uuid to shorten: {}'.format(str(uuid_4)))
-    print('shortened uuid: {}'.format(short_uuid))
-    print('unshortened uuid (original uuid): {}'.format(str(shortener.unshorten(short_uuid)), str(uuid_4)))
-
+    print(f'Uuid to shorten: {uuid_4}')
+    print(f'shortened uuid: {short_uuid}')
+    print(f'unshortened uuid (original uuid): {shortener.unshorten(short_uuid)}')
 ```
 
 ##### Output 2:
