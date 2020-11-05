@@ -77,6 +77,28 @@ shortened uuid: meow-6qwbaCZnHtxJsj4uJTKJSV
 unshortened uuid (original uuid): 2bea23d4-2b96-485d-8788-0c606ab93319
 ```
 
+##### As an easy, one-way generator
+
+```python
+from uuid_shortener import ShortUuidGenerator
+from uuid import uuid4
+
+if __name__ == "__main__":
+    print('******** Generator')
+
+    uuid_gen = ShortUuidGenerator(prefix='meow', uuid=uuid4)
+
+    print('Shortened uuid 1: {}'.format( uuid_gen() ))
+    print('Shortened uuid 2: {}'.format( uuid_gen() ))
+```
+
+##### Output 3:
+
+```
+******** Generator
+Shortened uuid 1: meow-9ubC52uXU1MM9PcrUMaNNc
+Shortened uuid 2: meow-wqTnxvHfWzrPvREcVi5RAf
+```
 
 ## License
 
