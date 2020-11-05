@@ -38,25 +38,33 @@ class TestShortenedUuidGenerator(TestCase):
 
     def test_one_way_shortener_with_prefix(self):
         shortener = UuidShortener("dev")
-        short_id = ShortUuidGenerator(prefix="dev", uuid=uuid4)
+        expected_uuid = uuid4()
 
+        def fake_uuid():
+            return expected_uuid
+
+        short_id = ShortUuidGenerator(prefix="dev", uuid_fn=fake_uuid)
         short_uuid = short_id()
 
         self.assertGreater(len(short_uuid), 4)
         self.assertEqual(0, short_uuid.index("dev-"))
-        self.assertNotEqual(
+        self.assertEqual(
             shortener.unshorten(short_uuid),
-            UUID("00000000-0000-0000-0000-000000000000")
+            expected_uuid
         )
 
     def test_one_way_shortener_without_prefix(self):
         shortener = UuidShortener()
-        short_id = ShortUuidGenerator(uuid=uuid4)
+        expected_uuid = uuid4()
 
+        def fake_uuid():
+            return expected_uuid
+
+        short_id = ShortUuidGenerator(uuid_fn=fake_uuid)
         short_uuid = short_id()
 
         self.assertGreater(len(short_uuid), 0)
-        self.assertNotEqual(
+        self.assertEqual(
             shortener.unshorten(short_uuid),
-            UUID("00000000-0000-0000-0000-000000000000")
+            expected_uuid
         )
