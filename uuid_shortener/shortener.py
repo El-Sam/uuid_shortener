@@ -58,7 +58,7 @@ class UuidShortener:
         return UUID(uuid_number)
 
 
-class ShortUuidGenerator(object):
+class ShortUuidGenerator:
     def __init__(self, prefix=None, uuid_fn: Callable = uuid4):
         self.shortener = UuidShortener(prefix)
         self.uuid_fn = uuid_fn
