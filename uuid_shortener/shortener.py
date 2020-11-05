@@ -3,7 +3,7 @@ from uuid import UUID, uuid4
 from pybaseconv import Converter, BASE
 
 
-class UuidShortener(object):
+class UuidShortener:
 
     @property
     def prefix(self):
@@ -30,7 +30,7 @@ class UuidShortener(object):
         converter = Converter(BASE.HEX, BASE.FLICKER_BASE_58)
         converted_uuid = converter.convert(stringified_uuid)
 
-        return '{}-{}'.format(self.prefix, converted_uuid) if \
+        return f'{self.prefix}-{converted_uuid}' if \
             self.prefix is not None else converted_uuid
 
     def unshorten(self, short_uuid: str) -> UUID:
@@ -43,7 +43,7 @@ class UuidShortener(object):
         :return: the UUID rep of the shortened number
         """
 
-        prefix_substr = '{}-'.format(self.prefix)
+        prefix_substr = f'{self.prefix}-'
 
         if short_uuid.startswith(prefix_substr):
             short_uuid = short_uuid.replace(prefix_substr, '')
