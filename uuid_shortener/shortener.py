@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Callable
 from uuid import UUID, uuid4
 from pybaseconv import Converter, BASE
 
@@ -59,9 +59,9 @@ class UuidShortener:
 
 
 class ShortUuidGenerator(object):
-    def __init__(self, prefix=None, uuid=uuid4):
+    def __init__(self, prefix=None, uuid_fn: Callable = uuid4):
         self.shortener = UuidShortener(prefix)
-        self.uuid_fn = uuid
+        self.uuid_fn = uuid_fn
 
     def __call__(self):
         return self.shortener.shorten(self.uuid_fn())
